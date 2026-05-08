@@ -1,71 +1,83 @@
-# PRD: Mintry Fabric "Early Access" Landing Page
+# MINTRY.FABRIC
 
-## 1. Core Objective
+### Close the Attribution Void.
 
-To define the "Attribution Void" problem space, present the Logic Fabric as the definitive solution, and build a pre-launch waitlist of high-intent developers and technical leaders.
+**Mintry Fabric** is a high-performance transport-layer interceptor designed to provide real-time metering and budget enforcement for AI agentic fleets. It flips the model from reactive billing alerts to proactive financial mandates.
 
-## 2. Visual Identity & Aesthetic
+![Mintry Hero Animation](https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000&auto=format&fit=crop)
 
-- **Theme**: Deep Space / Dark Mode (#050505 background).
-- **Accents**: Neon Mint (#00FF88) and Electric Blue (#0070F3).
-- **Typography**: Clean, monospace-leaning sans-serif (e.g., Geist or Inter).
-- **Layout Style**: Bento Box grid for features and "Glassmorphism" for UI cards.
+---
 
-## 3. Page Structure (Section by Section)
+## 🚀 Key Features
 
-### I. The Hero: "The First Rule of Agentic Finance"
+- **Transport-Layer Interception**: No code changes required. It sits at the network layer to monitor every token and cent in real-time.
+- **Universal Mandates**: Assign precise "Hard Caps" to tasks or agents. When the cap is hit, the Fabric engages a kill-switch instantly.
+- **High-Performance Ledger**: Powered by **SQLite (Turso)** with WAL mode for zero-latency cost attribution.
+- **Language Agnostic**: Sidecar proxy architecture supports Python, Node.js, Go, Java, and more.
 
-- **Headline**: Close the Attribution Void.
-- **Sub-headline**: Stop flying blind. Mintry Fabric is the transport-layer interceptor that gives you real-time metering and budget enforcement for every AI agent you run.
-- **CTA**: [Enter Email Address] $\rightarrow$ Get Early Access
-- **Visual**: A floating, glowing "Logic Fabric" wireframe or a terminal-style animation showing a budget being enforced in real-time.
+## 🛠️ Tech Stack
 
-### II. The Problem: "Agent-Blindness"
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router, Canary)
+- **Styling**: Vanilla CSS with CSS Variables
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Database**: [Turso](https://turso.tech/) (libSQL / SQLite)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-- **Content**: A high-impact section highlighting the trauma of the "Mystery Spike."
-- **The Hook**: "You know what you spent on OpenAI this month. But do you know which specific background task burned $200 while you were asleep?"
-- **Interactive Element**: A "Reactive vs. Proactive" comparison table.
+---
 
-| Feature          | Standard Billing (Reactive) | Mintry Fabric (Proactive)   |
-| :--------------- | :-------------------------- | :-------------------------- |
-| **Visibility**   | Monthly Invoice             | Real-time SQLite Ledger     |
-| **Enforcement**  | Email Alerts (Too late)     | Transport-Layer Kill-Switch |
-| **Attribution**  | "API-Global"                | Per-Agent / Per-Task        |
-| **Cost Control** | Post-hoc analysis           | Proactive Mandate Caps      |
+## 🏁 Getting Started
 
-### III. The Solution: The Logic Fabric
+### 1. Prerequisites
 
-The 3 Pillars (Bento Grid):
+- Node.js 18.17 or later
+- A Turso database (for the waitlist functionality)
 
-1. **Transport-Layer Interception**: No code changes required. It sits at the network layer to watch everything.
-2. **Universal Mandates**: Assign a specific "Hard Cap" to every task. If the agent hits the limit, the Fabric cuts the power.
-3. **High-Performance Ledger**: Powered by SQLite with WAL mode. Zero-latency, No-GIL ready, and built for the 2026 stack.
+### 2. Installation
 
-### IV. The "Code-First" Proof
+Clone the repository and install dependencies:
 
-- **Content**: A code block showing the `mintry.init()` and the `PermissionError` catch.
-- **Caption**: "Three lines of code to prevent a five-figure mistake."
+```bash
+git clone https://github.com/ZolileN/mintry-page.git
+cd mintry-page
+npm install
+```
 
-### V. The Language-Agnostic Promise
+### 3. Environment Setup
 
-- **Content**: "One Fabric. Any Language."
-- **Copy**: Whether you build in Python, Node.js, or Java, Mintry provides a sidecar proxy architecture to ensure your entire agentic fleet is fiscally responsible.
+Create a `.env.local` file in the root directory (use `.env.example` as a template):
 
-## 4. Conversion Flow (The Lead Magnet)
+```bash
+cp .env.example .env.local
+```
 
-- **The Waitlist**: A simple, frictionless email capture.
-- **The "Thank You" Hook**: After subscribing, users receive a PDF titled: "The CTO’s Guide to Solving the Attribution Void: 5 Strategies to Stop Agent Budget Runaway."
-  i
+Fill in your Turso credentials:
 
-## 5. Technical Requirements for V1
+```env
+TURSO_DATABASE_URL=your_libsql_url
+TURSO_AUTH_TOKEN=your_auth_token
+```
 
-- **Framework**: Next.js 15+ (Vercel) for high-performance SSR and SEO.
-- **Analytics**: Privacy-focused tracking (e.g., Plausible or Vercel Analytics) to see where developers drop off.
-- **Database**: Turso for rapid email collection and waitlist management.
-- **Animations**: Framer Motion for the "Kill-Switch" visual feedback.
+### 4. Run the Development Server
 
-## 6. Success Metrics
+```bash
+npm run dev
+```
 
-- **Conversion Rate**: 10% target from visitor to email subscriber.
-- **Time on Page**: High (indicates engineers are reading the technical documentation snippets).
-- **Social Shares**: Tracking the "Attribution Void" term as it gains traction on X and LinkedIn.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+## 📁 Project Structure
+
+- `/app`: Next.js App Router (Layouts, Pages, API Routes)
+- `/components`: Reusable React components (Waitlist Form, etc.)
+- `app/globals.css`: Core design system and styles
+- `public/`: Static assets
+
+## 📜 Attribution
+
+Built for the 2026 Agentic Stack. Stop flying blind. Join the Fabric.
+
+---
+
+© 2026 Mintry Inc.
