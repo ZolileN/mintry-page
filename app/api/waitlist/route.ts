@@ -1,13 +1,22 @@
 import { createClient } from '@libsql/client';
 import { NextResponse } from 'next/server';
 
-const client = createClient({
-  url: process.env.TURSO_DATABASE_URL!,
-  authToken: process.env.TURSO_AUTH_TOKEN!,
-});
+export const dynamic = 'force-dynamic';
+
+function getTursoClient() {
+  const url = process.env.TURSO_DATABASE_URL;
+  const authToken = process.env.TURSO_AUTH_TOKEN;
+
+  if (!url || !authToken) {
+    throw new Error('TURSO_DATABASE_URL or TURSO_AUTH_TOKEN is not defined');
+  }
+
+  return createClient({ url, authToken });
+}
 
 export async function POST(req: Request) {
   try {
+    const client = getTursoClient();
     const { email } = await req.json();
 
     // Basic Validation
