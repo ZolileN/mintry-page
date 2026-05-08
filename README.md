@@ -64,7 +64,47 @@ The 3 Pillars (Bento Grid):
 - **Database**: Turso for rapid email collection and waitlist management.
 - **Animations**: Framer Motion for the "Kill-Switch" visual feedback.
 
-## 6. Success Metrics
+## 6. Recent Updates & UI Enhancements (May 2026)
+
+The following enhancements were implemented to modernize the landing page and improve conversion intent:
+
+### I. Language Section Overhaul
+
+- **Language-Agnostic Grid**: Replaced the text-heavy language section with a visual pill-based grid.
+- **Brand Identity**: Integrated official brand colors for supported runtimes (Python, Node.js, Go, Java, Kotlin, Swift).
+- **Architecture Focus**: Highlighted the **Sidecar Proxy Architecture**, emphasizing zero SDK lock-in and vendor coupling.
+
+### II. The "First Wave" Waitlist Experience
+
+- **Urgency & Value**: Rebranded the waitlist to "Join the First Wave," highlighting priority onboarding and direct founding team access.
+- **Performance Proof (Stats Bar)**: Added a high-impact metrics bar:
+  - **$0** Cost to join
+  - **<3ms** Ledger latency
+  - **100%** Attribution coverage
+  - **6+** Languages supported
+- **Turso Integration**: Optimized the `WaitlistForm` component for seamless email capture into the Turso/SQLite backend.
+
+### III. Global UI Polish
+
+- **Dynamic Footer**: Implemented a modern, inline footer with automatic year updates and responsive stacking for mobile devices.
+- **Reveal Animations**: Integrated project-wide "reveal" transitions using **Framer Motion**, ensuring elements gracefully slide into view as the user scrolls.
+- **CSS Architecture**: Cleaned up `globals.css`, fixed syntax errors, and standardized design tokens for `--mint` and `--blue` across all interactive elements.
+
+### IV. Git Workflow
+
+- All UI enhancements were developed and tracked under the `UI-enhancement` branch.
+
+## 7. Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+## 8. Success Metrics
 
 - **Conversion Rate**: 10% target from visitor to email subscriber.
 - **Time on Page**: High (indicates engineers are reading the technical documentation snippets).
