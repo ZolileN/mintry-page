@@ -72,6 +72,12 @@ body::before {
   z-index: 1;
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
 section {
   position: relative;
   z-index: 1;
@@ -84,14 +90,20 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1.25rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
-  background: rgba(5, 5, 5, 0.85);
+  background: rgba(5, 5, 5, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 1rem 1.25rem;
+  }
 }
 
 .nav-logo {
@@ -216,6 +228,15 @@ h1 .blue {
   max-width: 480px;
   width: 100%;
   margin: 0 auto 2rem;
+}
+
+@media (max-width: 480px) {
+  .email-form {
+    flex-direction: column;
+  }
+  .cta-btn {
+    width: 100%;
+  }
 }
 
 .email-input {
@@ -438,7 +459,8 @@ h3 {
 .compare-table-wrap {
   border: 1px solid var(--border-bright);
   border-radius: 14px;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .compare-table {
@@ -1052,6 +1074,77 @@ h3 {
   
   .footer-inner .sep {
     display: none;
+  }
+}
+
+/* RESPONSIVE LAYOUTS */
+@media (max-width: 1024px) {
+  .problem-inner, .proof-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    padding: 7rem 1.25rem 4rem;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+  
+  .hero-sub {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .terminal-wrap {
+    margin-top: 3rem;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-card.wide, .bento-card.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .bento-card.wide {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: flex-start !important;
+  }
+
+  #problem, #solution, #proof, #languages {
+    padding: 5rem 0;
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-body {
+    font-size: 11px;
+    padding: 1.25rem;
+  }
+  
+  .code-body {
+    font-size: 11px;
+    padding: 1.25rem;
+  }
+  
+  .lang-pill {
+    width: 100%;
+    justify-content: center;
   }
 }
 
