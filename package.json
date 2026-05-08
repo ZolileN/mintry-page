@@ -9,17 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "canary",
-    "react": "rc",
-    "react-dom": "rc",
+    "@aptabase/react": "^0.4.0",
     "@libsql/client": "latest",
     "framer-motion": "latest",
-    "lucide-react": "latest"
+    "lucide-react": "latest",
+    "next": "canary",
+    "react": "rc",
+    "react-dom": "rc"
   },
   "devDependencies": {
-    "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
-    "@types/react-dom": "latest"
+    "@types/react-dom": "latest",
+    "typescript": "latest"
   }
 }

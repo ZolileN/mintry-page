@@ -19,8 +19,15 @@ const staggerContainer = {
   }
 };
 
+import { useAptabase } from "@aptabase/react";
+
 export default function LandingPage() {
+  const { trackEvent } = useAptabase();
   const [terminalLines, setTerminalLines] = useState<number>(0);
+
+  useEffect(() => {
+    trackEvent("page_view", { page: "landing_page" });
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {

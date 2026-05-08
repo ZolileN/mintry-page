@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Syne } from "next/font/google";
 import "./globals.css";
+import { AptabaseProvider } from "@/components/AptabaseProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${syne.variable} antialiased`}>
-        {children}
+        <AptabaseProvider>
+          {children}
+        </AptabaseProvider>
       </body>
     </html>
   );

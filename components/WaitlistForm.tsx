@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useAptabase } from "@aptabase/react";
 
 interface WaitlistFormProps {
   inputId: string;
@@ -10,6 +11,7 @@ interface WaitlistFormProps {
 }
 
 export default function WaitlistForm({ inputId, placeholder = "you@company.dev", microText }: WaitlistFormProps) {
+  const { trackEvent } = useAptabase();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -20,10 +22,12 @@ export default function WaitlistForm({ inputId, placeholder = "you@company.dev",
     if (!email || !email.includes('@')) {
       setStatus('error');
       setMessage('A valid email is required.');
+      trackEvent("waitlist_validation_failed", { inputId });
       return;
     }
 
     setStatus('loading');
+    trackEvent("waitlist_submission_started", { inputId });
 
     try {
       const response = await fetch('/api/waitlist', {
@@ -38,13 +42,16 @@ export default function WaitlistForm({ inputId, placeholder = "you@company.dev",
         setStatus('success');
         setMessage(data.message);
         setEmail('');
+        trackEvent("waitlist_submission_success", { inputId });
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong.');
+        trackEvent("waitlist_submission_failed", { inputId, error: data.error });
       }
     } catch (err) {
       setStatus('error');
       setMessage('Failed to connect to the server.');
+      trackEvent("waitlist_submission_error", { inputId, error: "network_failure" });
     }
   };
 
